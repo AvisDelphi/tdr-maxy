@@ -40,6 +40,6 @@ Route::get('/reporting', function () {
 })->name('reporting');
 
 
-Route::get('/setting', function () {
-    return view('setting');
+Route::get('/settings', function () {
+    return view('settings');
 })->name('setting');
