@@ -39,6 +39,10 @@ Route::get('/reporting', function () {
     return view('reportingtemplate');
 })->name('reporting');
 
+Route::get('/missions', function () {
+    return view('missions');
+})->name('missions');
+
 
 Route::get('/settings', function () {
     return view('settings');

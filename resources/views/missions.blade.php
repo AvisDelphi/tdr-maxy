@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting | Dashboard</title>
+    <title>Missions | Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="https://tdr-racing.com/assets/logo-b.svg">
 </head>
@@ -11,7 +11,7 @@
 
 <div class="flex h-screen">
 
-    <!-- Sidebar -->
+        <!-- Sidebar -->
         <aside class="w-64 bg-white shadow-lg flex flex-col">
             <div class="p-6 border-b">
                 <h1 class="text-2xl font-bold text-red-600">TDR</h1>
@@ -76,7 +76,6 @@
 
     <!-- Main Content -->
     <main class="flex-1 flex flex-col">
-
         <!-- Topbar -->
         <header class="flex justify-between items-center bg-white shadow px-6 py-4">
             <input type="text" placeholder="Search..." class="w-1/3 px-4 py-2 border rounded-lg">
@@ -86,48 +85,77 @@
             </div>
         </header>
 
-        <!-- Settings Content -->
+        <!-- Missions List -->
         <div class="p-6 overflow-y-auto">
-            <h2 class="text-2xl font-bold mb-6">Edit Profile Settings</h2>
+            <h2 class="text-xl font-bold mb-4">Missions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <div class="bg-white shadow rounded-lg p-6">
-                <form action="#" method="POST" class="space-y-6">
-                    @csrf
-
-                    <div>
-                        <label class="block font-medium mb-1">Full Name</label>
-                        <input type="text" name="name" value="John Doe"
-                               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-red-500 focus:outline-none">
+                <!-- Card Mission -->
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <img src="https://radarbanyumas.disway.id//upload/7c9a8a70275e023c11b421c082b215e4.jpg" alt="Mission" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Post a Reel with #RidewithPrideTDR</h3>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">31/09/2025</span>
+                            <span class="text-xs text-gray-600">🔥 10 pts</span>
+                        </div>
+                        <button onclick="openModal()" class="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">See Details</button>
                     </div>
+                </div>
 
-                    <div>
-                        <label class="block font-medium mb-1">Email</label>
-                        <input type="email" name="email" value="johndoe@email.com"
-                               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-red-500 focus:outline-none">
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <img src="https://imgx.gridoto.com/crop/0x0:0x0/700x465/photo/2021/08/17/zx-25r-abs-red2jpg-20210817084043.jpg" alt="Mission" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Reach 1,000 views on TikTok</h3>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">04/10/2025</span>
+                            <span class="text-xs text-gray-600">🔥 20 pts</span>
+                        </div>
+                        <button onclick="openModal()" class="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">See Details</button>
                     </div>
+                </div>
 
-                    <div>
-                        <label class="block font-medium mb-1">Password</label>
-                        <input type="password" name="password" placeholder="New password"
-                               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-red-500 focus:outline-none">
-                        <p class="text-xs text-gray-500 mt-1">Leave blank if you don’t want to change.</p>
-                    </div>
-
-                    <div>
-                        <label class="block font-medium mb-1">Profile Picture</label>
-                        <input type="file" name="avatar"
-                               class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-red-500 focus:outline-none">
-                    </div>
-
-                    <button type="submit"
-                            class="w-full bg-red-600 text-white py-3 rounded-md hover:bg-red-700">
-                        Save Changes
-                    </button>
-                </form>
             </div>
         </div>
     </main>
 </div>
+
+<!-- Modal Detail -->
+<div id="missionModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg p-6 relative">
+        <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-600">✖</button>
+        <h3 class="text-xl font-bold mb-4">Mission Detail</h3>
+        <ul class="space-y-2 text-sm">
+            <li><strong>Title:</strong> Post a Reel with #RidewithPrideTDR</li>
+            <li><strong>Platform:</strong> Instagram</li>
+            <li><strong>Description:</strong> Create an Instagram Reel showing a before–after of your motorcycle using TDR parts.</li>
+            <li><strong>Hashtags:</strong> #PasangTDR #WeMoveasOne #RidetoThrive #RidewithPrideTDR</li>
+            <li><strong>Tags:</strong> @tdr_racing</li>
+            <li><strong>Points Reward:</strong> 10</li>
+            <li><strong>Deadline:</strong> 31 Sep 2025</li>
+        </ul>
+
+        <div class="mt-4">
+            <label class="block mb-1 font-medium">Submission</label>
+            <input type="url" placeholder="Insert Link" class="w-full border rounded p-2 mb-2">
+            <label class="flex items-center space-x-2 text-sm">
+                <input type="checkbox" class="h-4 w-4">
+                <span>I confirm this content follows the mission guidelines</span>
+            </label>
+            <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('missionModal').classList.remove('hidden');
+        document.getElementById('missionModal').classList.add('flex');
+    }
+    function closeModal() {
+        document.getElementById('missionModal').classList.add('hidden');
+    }
+</script>
 
 </body>
 </html>

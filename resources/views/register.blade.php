@@ -13,7 +13,9 @@
     <!-- Navbar -->
         <nav class="w-full bg-white shadow fixed top-0 z-50">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <img src="https://tdr-racing.com/assets/logo-b.svg" alt="TDR Logo" class="h-8">
+                <a href="{{ url('/') }}">
+                    <img src="https://tdr-racing.com/assets/logo-b.svg" alt="TDR Logo" class="h-8">
+                </a>
 
                 <ul class="hidden md:flex space-x-8 font-medium">
                     <li><a href="#about" class="hover:text-red-600">About HPZ Crew</a></li>

@@ -9,23 +9,25 @@
 </head>
 <body class="bg-[#fefbfb] text-gray-800">
 
-    <!-- Navbar -->
-    <nav class="w-full bg-white shadow fixed top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="https://tdr-racing.com/assets/logo-b.svg" alt="TDR Logo" class="h-8">
+            <!-- Navbar -->
+        <nav class="w-full bg-white shadow fixed top-0 z-50">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="{{ url('/') }}">
+                    <img src="https://tdr-racing.com/assets/logo-b.svg" alt="TDR Logo" class="h-8">
+                </a>
 
-            <ul class="hidden md:flex space-x-8 font-medium">
-                <li><a href="/" class="hover:text-red-600">About HPZ Crew</a></li>
-                <li><a href="#missions" class="hover:text-red-600">Missions & Rewards</a></li>
-                <li><a href="#gallery" class="hover:text-red-600">Winner's Gallery</a></li>
-            </ul>
+                <ul class="hidden md:flex space-x-8 font-medium">
+                    <li><a href="#about" class="hover:text-red-600">About HPZ Crew</a></li>
+                    <li><a href="#missions" class="hover:text-red-600">Missions & Rewards</a></li>
+                    <li><a href="#gallery" class="hover:text-red-600">Winner's Gallery</a></li>
+                </ul>
 
-            <div class="flex space-x-3">
-                <a href="{{ url('/dashboard') }}" class="border px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200">Login</a>
-                <a href="{{ url('/register') }}" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">Join Us</a>
+                <div class="flex space-x-3">
+                    <a href="{{ url('/login') }}" class="border px-4 py-2 rounded-md hover:bg-gray-100">Login</a>
+                    <a href="{{ url('/register') }}" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">Join Us</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <!-- Login Form -->
     <section class="min-h-screen flex items-center justify-center bg-[#fefbfb]">
