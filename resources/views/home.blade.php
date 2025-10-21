@@ -25,6 +25,7 @@
                     <li><a href="#about" class="hover:text-red-600">About HPZ Crew</a></li>
                     <li><a href="#missions" class="hover:text-red-600">Missions & Rewards</a></li>
                     <li><a href="#gallery" class="hover:text-red-600">Winner's Gallery</a></li>
+                    <li><a href="{{ url('/chatbot') }}" class="hover:text-red-600">Chatbot</a></li>
                 </ul>
 
                 <div class="flex space-x-3">
@@ -39,8 +40,8 @@
                 style="background-image: url('https://tdr-racing.com/assets/uploads/l/slide-tdr.jpg');">
             <div class="container mx-auto px-6" data-aos="fade-right" data-aos-duration="2000">
                 <h1 class="text-5xl font-bold text-white leading-tight">Ride with Pride</h1>
-                <p class="mt-4 text-xl text-red-500 font-semibold">Join the Crew</p>
-                <p class="mt-2 text-white max-w-xl">Be part of an exclusive rider community. Earn rewards, gain exposure, and get the chance to become the face of TDR.</p>
+                <p class="mt-4 text-2xl text-red-500 font-semibold">Join the Crew</p>
+                <p class="mt-2 text-2xl text-white max-w-xl">Be part of an exclusive rider community. Earn rewards, gain exposure, and get the chance to become the face of TDR.</p>
                 <a href="{{ url('/register') }}" class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-red-700">Join Now</a>
             </div>
         </section>
@@ -113,45 +114,158 @@
         <section id="join" class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12">How to Join</h2>
-                <ol class="space-y-6 max-w-2xl mx-auto">
-                    <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
-                        <span class="h-8 w-8 flex items-center justify-center bg-red-100 text-red-600 rounded">1</span>
-                        <div>
-                            <h3 class="font-semibold">Register</h3>
-                            <p class="text-sm">Fill in the HPZ Crew form.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
-                        <span class="h-8 w-8 flex items-center justify-center bg-red-100 text-red-600 rounded">2</span>
-                        <div>
-                            <h3 class="font-semibold">Selection</h3>
-                            <p class="text-sm">TDR team reviews candidates.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
-                        <span class="h-8 w-8 flex items-center justify-center bg-red-100 text-red-600 rounded">3</span>
-                        <div>
-                            <h3 class="font-semibold">Activation</h3>
-                            <p class="text-sm">Receive your Digital Welcome Kit.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
-                        <span class="h-8 w-8 flex items-center justify-center bg-red-100 text-red-600 rounded">4</span>
-                        <div>
-                            <h3 class="font-semibold">Create & Share</h3>
-                            <p class="text-sm">Join challenges, post content, earn points.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
-                        <span class="h-8 w-8 flex items-center justify-center bg-red-100 text-red-600 rounded">5</span>
-                        <div>
-                            <h3 class="font-semibold">Level Up</h3>
-                            <p class="text-sm">Climb the leaderboard & win rewards.</p>
-                        </div>
-                    </li>
-                </ol>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <!-- Left Image -->
+                    <div class="space-y-6">
+                        <img src="https://statik.tempo.co/data/2012/12/08/id_155177/155177_620.jpg" alt="Riders" class="rounded-lg shadow-lg">
+                        <img src="https://statik.tempo.co/data/2012/12/08/id_155181/155181_620.jpg" alt="Riders" class="rounded-lg shadow-lg">
+                    </div>
+
+                    <!-- Right Steps -->
+                    <ol class="space-y-6">
+                        <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
+                            <span class="h-8 w-8 flex items-center justify-center border-2 border-red-600 text-red-600 rounded">1</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Register</h3>
+                                <p class="text-xl text-gray-600">Fill in the HPZ Crew form.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
+                            <span class="h-8 w-8 flex items-center justify-center border-2 border-red-600 text-red-600 rounded">2</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Selection</h3>
+                                <p class="text-xl text-gray-600">TDR team reviews candidates.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
+                            <span class="h-8 w-8 flex items-center justify-center border-2 border-red-600 text-red-600 rounded">3</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Activation</h3>
+                                <p class="text-xl text-gray-600">Receive your Digital Welcome Kit.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
+                            <span class="h-8 w-8 flex items-center justify-center border-2 border-red-600 text-red-600 rounded">4</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Create & Share</h3>
+                                <p class="text-xl text-gray-600">Join challenges, post content, earn points.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4" data-aos="fade-right" data-aos-duration="2000">
+                            <span class="h-8 w-8 flex items-center justify-center border-2 border-red-600 text-red-600 rounded">5</span>
+                            <div>
+                                <h3 class="text-xl font-semibold">Level Up</h3>
+                                <p class="text-xl text-gray-600">Climb the leaderboard & win rewards.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </section>
+
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 bg-[#221f21] text-white">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl font-bold text-center mb-8">FAQ</h2>
+
+                <div class="space-y-4" data-aos="fade-down" data-aos-duration="2000">
+                    <!-- FAQ Item -->
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(1)">
+                            Is there any registration fee?
+                            <span id="icon1" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer1" class="hidden px-4 pb-4 text-gray-300">
+                            No, joining HPZ Crew is completely free of charge.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(2)">
+                            What is inside the Welcome Kit Digital?
+                            <span id="icon2" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer2" class="hidden px-4 pb-4 text-gray-300">
+                            It contains your HPZ Crew ID, guidelines, and exclusive digital assets to start your journey.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(3)">
+                            How does the points and rewards system work?
+                            <span id="icon3" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer3" class="hidden px-4 pb-4 text-gray-300">
+                            You earn points by completing missions and engaging on social media. Points can be exchanged for merchandise and rewards.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(4)">
+                            How long does the registration approval take?
+                            <span id="icon4" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer4" class="hidden px-4 pb-4 text-gray-300">
+                            Typically within 3–5 working days after submission.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(5)">
+                            What kind of missions or challenges will I get?
+                            <span id="icon5" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer5" class="hidden px-4 pb-4 text-gray-300">
+                            You’ll get creative challenges such as making Reels, TikToks, or photos featuring TDR products.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(6)">
+                            How often are new missions released?
+                            <span id="icon6" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer6" class="hidden px-4 pb-4 text-gray-300">
+                            New missions are released every month with varying difficulty and rewards.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-600 rounded-md">
+                        <button class="w-full flex justify-between items-center px-4 py-3 text-left font-semibold hover:text-red-500 focus:outline-none"
+                                onclick="toggleFAQ(7)">
+                            Can I invite my friends to join HPZ Crew?
+                            <span id="icon7" class="text-gray-400">+</span>
+                        </button>
+                        <div id="answer7" class="hidden px-4 pb-4 text-gray-300">
+                            Yes! Share the registration link with your friends and grow the community together.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+        function toggleFAQ(id) {
+            const answer = document.getElementById(`answer${id}`);
+            const icon = document.getElementById(`icon${id}`);
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.textContent = '-';
+            } else {
+                answer.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+        </script>
+
 
         <!-- CTA Section -->
         <section class="bg-white py-20">

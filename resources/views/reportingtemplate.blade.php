@@ -25,6 +25,13 @@
                         alt="Dashboard Icon" class="w-5 h-5">
                     <span>Dashboard</span>
                 </a>
+                <a href="{{ url('/affiliation') }}"
+                class="flex items-center space-x-2 font-semibold
+                        {{ request()->is('affiliation') ? 'text-red-600' : 'text-gray-600 hover:text-red-600' }}">
+                    <img src="https://img.icons8.com/?size=100&id=7867&format=png&color={{ request()->is('affiliation') ? 'DC2626' : '000000' }}"
+                        alt="Affiliation Icon" class="w-5 h-5">
+                    <span>Affiliation</span>
+                </a>
                 <a href="{{ url('/leaderboard') }}"
                 class="flex items-center space-x-2 font-semibold
                         {{ request()->is('leaderboard') ? 'text-red-600' : 'text-gray-600 hover:text-red-600' }}">
@@ -38,6 +45,13 @@
                     <img src="https://img.icons8.com/?size=100&id=3344&format=png&color={{ request()->is('missions') ? 'DC2626' : '000000' }}"
                         alt="Missions Icon" class="w-5 h-5">
                     <span>Missions</span>
+                </a>
+                <a href="{{ url('/chatbotdashboard') }}"
+                class="flex items-center space-x-2 font-semibold
+                        {{ request()->is('missions') ? 'text-red-600' : 'text-gray-600 hover:text-red-600' }}">
+                    <img src="https://img.icons8.com/?size=100&id=100414&format=png&color={{ request()->is('chatbotdashboard') ? 'DC2626' : '000000' }}"
+                        alt="Chatbot Dashboard Icon" class="w-5 h-5">
+                    <span>Chatbot</span>
                 </a>
                 <!-- Reporting (Admin Only)-->
                 <a href="{{ url('/reporting') }}"
@@ -81,9 +95,9 @@
       <header class="flex justify-between items-center bg-white shadow px-6 py-4">
         <input type="text" placeholder="Search..." class="w-1/3 px-4 py-2 border rounded-lg">
         <div class="flex items-center space-x-4">
-          <span class="font-semibold">Guest</span>
-          <img src="https://img.icons8.com/?size=100&id=86363&format=png&color=000000" alt="User" class="w-10 h-10 rounded-full">
-        </div>
+        <span class="font-semibold">Rex Zhale <span class="bg-gray-200 text-xs px-2 py-1 rounded">Rookie</span></span>
+        <img src="https://img.icons8.com/?size=100&id=86363&format=png&color=000000" class="w-10 h-10 rounded-full">
+      </div>
       </header>
 
       <!-- Content -->

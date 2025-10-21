@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting | Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="https://tdr-racing.com/assets/logo-b.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot | Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="https://tdr-racing.com/assets/logo-b.svg">
 </head>
+
 <body class="bg-gray-100 font-sans">
 
 <div class="flex h-screen">
-
-    <!-- Sidebar -->
+  <!-- Sidebar -->
         <aside class="w-64 bg-white shadow-lg flex flex-col">
             <div class="p-6 border-b">
                 <h1 class="text-2xl font-bold text-red-600">TDR</h1>
@@ -48,7 +48,7 @@
                 </a>
                 <a href="{{ url('/chatbotdashboard') }}"
                 class="flex items-center space-x-2 font-semibold
-                        {{ request()->is('missions') ? 'text-red-600' : 'text-gray-600 hover:text-red-600' }}">
+                        {{ request()->is('chatbotdashboard') ? 'text-red-600' : 'text-gray-600 hover:text-red-600' }}">
                     <img src="https://img.icons8.com/?size=100&id=100414&format=png&color={{ request()->is('chatbotdashboard') ? 'DC2626' : '000000' }}"
                         alt="Chatbot Dashboard Icon" class="w-5 h-5">
                     <span>Chatbot</span>
@@ -88,59 +88,52 @@
             </div>
         </aside>
 
-    <!-- Main Content -->
-    <main class="flex-1 flex flex-col">
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col">
+    <!-- Topbar -->
+    <header class="flex justify-between items-center bg-white shadow px-6 py-4">
+      <input type="text" placeholder="Search..." class="w-1/3 px-4 py-2 border rounded-lg">
+      <div class="flex items-center space-x-4">
+        <span class="font-semibold">Rex Zhale <span class="bg-gray-200 text-xs px-2 py-1 rounded">Rookie</span></span>
+        <img src="https://img.icons8.com/?size=100&id=86363&format=png&color=000000" class="w-10 h-10 rounded-full">
+      </div>
+    </header>
 
-        <!-- Topbar -->
-        <header class="flex justify-between items-center bg-white shadow px-6 py-4">
-            <input type="text" placeholder="Search..." class="w-1/3 px-4 py-2 border rounded-lg">
-            <div class="flex items-center space-x-4">
-                <span class="font-semibold">{{ Auth::user()->name ?? 'Guest' }}</span>
-                <img src="https://img.icons8.com/?size=100&id=86363&format=png&color=000000" alt="User" class="w-10 h-10 rounded-full">
-            </div>
-        </header>
+    <!-- Chatbot Section -->
+    <div class="flex flex-col items-center justify-center flex-1 bg-red-50 p-10">
+      <h3 class="text-sm text-gray-500 mb-2">Hi Rex! I’m HPZ Assistant.</h3>
+      <h1 class="text-4xl font-bold mb-8">
+        How can <span class="text-red-600">I help?</span>
+      </h1>
 
-        <!-- Settings Content -->
-        <div class="p-6 overflow-y-auto">
-            <h2 class="text-2xl font-bold mb-6">Edit Profile Settings</h2>
+      <p class="text-gray-600 mb-6 text-center">
+        Need some help? Tap one of the questions riders often ask!
+      </p>
 
-            <div class="bg-white shadow rounded-lg p-6">
-                <form action="#" method="POST" class="space-y-6">
-                    @csrf
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <button class="border rounded-lg p-4 hover:shadow bg-white w-64">
+          <p class="font-medium text-sm">What is this week's mission?</p>
+          <img src="https://img.icons8.com/?size=100&id=FjCDM3bdkBGu&format=png&color=000000" class="w-5 mt-2">
+        </button>
+        <button class="border rounded-lg p-4 hover:shadow bg-white w-64">
+          <p class="font-medium text-sm">What's my total points?</p>
+          <img src="https://img.icons8.com/?size=100&id=22125&format=png&color=000000" class="w-5 mt-2">
+        </button>
+        <button class="border rounded-lg p-4 hover:shadow bg-white w-64">
+          <p class="font-medium text-sm">How do I submit content?</p>
+          <img src="https://img.icons8.com/?size=100&id=124094&format=png&color=000000" class="w-5 mt-2">
+        </button>
+      </div>
 
-                    <div>
-                        <label class="block font-medium mb-1">Full Name</label>
-                        <input type="text" name="name" value="John Doe"
-                               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-red-500 focus:outline-none">
-                    </div>
-
-                    <div>
-                        <label class="block font-medium mb-1">Email</label>
-                        <input type="email" name="email" value="johndoe@email.com"
-                               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-red-500 focus:outline-none">
-                    </div>
-
-                    <div>
-                        <label class="block font-medium mb-1">Password</label>
-                        <input type="password" name="password" placeholder="New password"
-                               class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-red-500 focus:outline-none">
-                        <p class="text-xs text-gray-500 mt-1">Leave blank if you don’t want to change.</p>
-                    </div>
-
-                    <div>
-                        <label class="block font-medium mb-1">Profile Picture</label>
-                        <input type="file" name="avatar"
-                               class="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-red-500 focus:outline-none">
-                    </div>
-
-                    <button type="submit"
-                            class="w-full bg-red-600 text-white py-3 rounded-md hover:bg-red-700">
-                        Save Changes
-                    </button>
-                </form>
-            </div>
-        </div>
-    </main>
+      <!-- Input Chat -->
+      <div class="w-full max-w-2xl flex items-center border rounded-lg bg-white px-3 py-2">
+        <input type="text" placeholder="Ask about your points or missions..." class="flex-1 px-3 py-2 focus:outline-none">
+        <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+          <img src="https://img.icons8.com/?size=100&id=78&format=png&color=FFFFFF" class="w-5">
+        </button>
+      </div>
+    </div>
+  </main>
 </div>
 
 </body>

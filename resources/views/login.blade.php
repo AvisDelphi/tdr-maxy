@@ -20,6 +20,7 @@
                     <li><a href="#about" class="hover:text-red-600">About HPZ Crew</a></li>
                     <li><a href="#missions" class="hover:text-red-600">Missions & Rewards</a></li>
                     <li><a href="#gallery" class="hover:text-red-600">Winner's Gallery</a></li>
+                    <li><a href="{{ url('/chatbot') }}" class="hover:text-red-600">Chatbot</a></li>
                 </ul>
 
                 <div class="flex space-x-3">

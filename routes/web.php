@@ -21,6 +21,10 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
+Route::get('/chatbot', function () {
+    return view('chatbot');
+})->name('chatbot');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -30,6 +34,10 @@ Route::get('/register', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/affiliation', function () {
+    return view('affiliation');
+})->name('affiliation');
 
 Route::get('/leaderboard', function () {
     return view('leaderboard');
@@ -42,6 +50,11 @@ Route::get('/reporting', function () {
 Route::get('/missions', function () {
     return view('missions');
 })->name('missions');
+
+Route::get('/chatbotdashboard', function () {
+    return view('chatbotdashboard');
+})->name('chatbotdashboard');
+
 
 
 Route::get('/settings', function () {
